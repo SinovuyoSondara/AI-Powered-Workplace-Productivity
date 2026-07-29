@@ -204,6 +204,8 @@ function ChatPage() {
           <AiDisclaimer className="mt-2 justify-center" />
         </div>
       </Card>
+
+      <FeatureNav />
     </div>
   );
 }
