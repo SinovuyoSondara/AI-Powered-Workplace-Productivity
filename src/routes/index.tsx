@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { AiDisclaimer } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -156,6 +157,8 @@ function Dashboard() {
           ))}
         </div>
       </section>
+
+      <FeatureNav />
     </div>
   );
 }

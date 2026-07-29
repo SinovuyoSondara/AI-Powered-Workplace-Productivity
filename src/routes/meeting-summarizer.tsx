@@ -5,6 +5,7 @@ import { Loader2, NotebookPen, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 import { AiResultCard } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -100,6 +101,8 @@ function MeetingSummarizer() {
           empty="Your executive summary, key points, decisions, action items, deadlines and owners will appear here."
         />
       </div>
+
+      <FeatureNav />
     </div>
   );
 }

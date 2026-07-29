@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import logo from "@/assets/workflow-ai-logo.png";
 import { AiDisclaimer, Markdown } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { PageHeader } from "@/components/page-header";
 import {
   Conversation,
