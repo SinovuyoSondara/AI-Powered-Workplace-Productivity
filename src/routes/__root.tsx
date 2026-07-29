@@ -8,12 +8,30 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Menu } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppBreadcrumb } from "@/components/feature-nav";
+import { Button } from "@/components/ui/button";
+import { SidebarProvider, useSidebar } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
+
+function HamburgerTrigger() {
+  const { toggleSidebar } = useSidebar();
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      aria-label="Toggle navigation menu"
+      onClick={toggleSidebar}
+      className="rounded-xl"
+    >
+      <Menu className="size-5" />
+    </Button>
+  );
+}
 
 function NotFoundComponent() {
   return (
