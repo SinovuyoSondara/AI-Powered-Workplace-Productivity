@@ -72,7 +72,7 @@ export function AppSidebar() {
                     tooltip={item.title}
                     isActive={currentPath === item.url}
                   >
-                    <Link to={item.url}>
+                    <Link to={item.url} onClick={collapseAfterNavigate}>
                       <item.icon />
                       <span>{item.title}</span>
                     </Link>
