@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Dashboard — WorkFlow AI Productivity Assistant" },
       {
         property: "og:description",
-        content: "Your AI workspace overview with quick actions for everyday work tasks.",
+        content: "Your AI workspace overview: productivity stats and quick actions for emails, meetings, planning and research.",
       },
     ],
   }),
