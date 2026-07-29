@@ -21,6 +21,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 export const navItems = [
@@ -34,6 +35,12 @@ export const navItems = [
 
 export function AppSidebar() {
   const currentPath = useRouterState({ select: (r) => r.location.pathname });
+  const { setOpen, setOpenMobile, isMobile } = useSidebar();
+
+  const collapseAfterNavigate = () => {
+    if (isMobile) setOpenMobile(false);
+    else setOpen(false);
+  };
 
   return (
     <Sidebar collapsible="icon">
