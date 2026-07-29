@@ -8,12 +8,30 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Menu } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppBreadcrumb } from "@/components/feature-nav";
+import { Button } from "@/components/ui/button";
+import { SidebarProvider, useSidebar } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
+
+function HamburgerTrigger() {
+  const { toggleSidebar } = useSidebar();
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      aria-label="Toggle navigation menu"
+      onClick={toggleSidebar}
+      className="rounded-xl"
+    >
+      <Menu className="size-5" />
+    </Button>
+  );
+}
 
 function NotFoundComponent() {
   return (
@@ -133,11 +151,9 @@ function RootComponent() {
         <div className="flex min-h-screen w-full bg-gradient-surface">
           <AppSidebar />
           <div className="flex min-w-0 flex-1 flex-col">
-            <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border/70 bg-background/80 px-3 backdrop-blur sm:px-6">
-              <SidebarTrigger />
-              <span className="truncate text-sm font-medium text-muted-foreground">
-                AI Workplace Productivity Assistant
-              </span>
+            <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 px-3 backdrop-blur sm:px-6">
+              <HamburgerTrigger />
+              <AppBreadcrumb />
             </header>
             <main className="min-w-0 flex-1">
               {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

@@ -5,6 +5,7 @@ import { Loader2, Mail, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 import { AiResultCard } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -155,6 +156,8 @@ function EmailGenerator() {
           empty="Your generated subject line, email body and closing will appear here."
         />
       </div>
+
+      <FeatureNav />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { Loader2, Search, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 import { AiResultCard } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -132,6 +133,8 @@ function ResearchAssistant() {
           empty="Your summary, key insights, recommendations and suggested references will appear here."
         />
       </div>
+
+      <FeatureNav />
     </div>
   );
 }

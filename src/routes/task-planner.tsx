@@ -5,6 +5,7 @@ import { CalendarClock, Loader2, Plus, Sparkles, X } from "lucide-react";
 import { toast } from "sonner";
 
 import { AiResultCard } from "@/components/ai-output";
+import { FeatureNav } from "@/components/feature-nav";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -138,6 +139,8 @@ function TaskPlanner() {
           empty="Your priorities, daily schedule, time estimates and productivity recommendations will appear here."
         />
       </div>
+
+      <FeatureNav />
     </div>
   );
 }
