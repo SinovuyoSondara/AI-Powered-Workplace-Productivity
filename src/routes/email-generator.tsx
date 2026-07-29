@@ -156,6 +156,8 @@ function EmailGenerator() {
           empty="Your generated subject line, email body and closing will appear here."
         />
       </div>
+
+      <FeatureNav />
     </div>
   );
 }
