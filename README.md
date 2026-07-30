@@ -203,4 +203,4 @@ This project is provided as-is for demonstration and educational purposes. Refer
 
 ---
 
-Built with ❤️ using [Lovable](https://lovable.dev).
+Built using [Lovable](https://lovable.dev).
