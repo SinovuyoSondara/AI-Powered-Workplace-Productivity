@@ -98,30 +98,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dashboard — WorkFlow AI Productivity Assistant" },
-      {
-        name: "description",
-        content:
-          "Your AI workspace overview: productivity stats and quick actions for emails, meetings, planning and research.",
-      },
-      { name: "author", content: "WorkFlow AI" },
-      { property: "og:title", content: "Dashboard — WorkFlow AI Productivity Assistant" },
-      {
-        property: "og:description",
-        content: "Your AI workspace overview: productivity stats and quick actions for emails, meetings, planning and research.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Dashboard — WorkFlow AI Productivity Assistant" },
-      { name: "twitter:description", content: "Your AI workspace overview: productivity stats and quick actions for emails, meetings, planning and research." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba2f5d68-bd43-46cb-8534-003223d371ff/id-preview-d1cf80ee--fc24d9fa-2477-445b-a21f-d3b430ad3b94.lovable.app-1785332521580.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba2f5d68-bd43-46cb-8534-003223d371ff/id-preview-d1cf80ee--fc24d9fa-2477-445b-a21f-d3b430ad3b94.lovable.app-1785332521580.png" },
+      { name: "author", content: "Sinovuyo Sondara" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -151,22 +139,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SidebarProvider>
-        <div className="flex min-h-screen w-full bg-gradient-surface">
-          <AppSidebar />
-          <div className="flex min-w-0 flex-1 flex-col">
-            <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/80 px-3 backdrop-blur sm:px-6">
-              <HamburgerTrigger />
-              <AppBreadcrumb />
-            </header>
-            <main className="min-w-0 flex-1">
-              {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-              <Outlet />
-            </main>
-          </div>
-        </div>
-        <Toaster richColors position="top-right" />
-      </SidebarProvider>
+      <div className="min-h-dvh w-full bg-background">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </div>
+      <Toaster richColors position="top-right" />
     </QueryClientProvider>
   );
 }
+
